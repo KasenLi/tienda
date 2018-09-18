@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="product-block">
-				<img src="{{ $product->image }}">
+				<img src="{{ asset($product->image) }}">
 			</div>
 		</div>
 		<div class="col-md-6">
