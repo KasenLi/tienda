@@ -15,7 +15,8 @@ class CartController extends Controller
     public function show()
     {
     	$cart = \Session::get('cart');
-    	return view('store.cart', compact('cart'));
+    	$total = $this->total();
+    	return view('store.cart', compact('cart', 'total'));
     }
 
     // Add item
@@ -27,5 +28,44 @@ class CartController extends Controller
     	\Session::put('cart', $cart);
 
     	return redirect()->route('cart-show');
+    }
+
+    // Delete item
+    public function delete(Product $product)
+    {
+    	$cart = \Session::get('cart');
+    	unset($cart[$product->slug]);
+
+    	\Session::put('cart', $cart);
+    	return redirect()->route('cart-show');
+    }
+
+    // Update item
+    public function update(Product $product, $quantity)
+    {
+    	$cart = \Session::get('cart');
+    	$cart[$product->slug]->quantity = $quantity;
+    	\Session::put('cart', $cart);
+
+    	return redirect()->route('cart-show');
+    }
+
+    //Trash cart
+    public function trash()
+    {
+    	\Session::forget('cart');
+    	return redirect()->route('cart-show');
+    }
+
+    // Total
+    private function total()
+    {
+    	$cart = \Session::get('cart');
+    	$total = 0;
+    	foreach ($cart as $item) {
+    		$total += $item->price * $item->quantity;
+    	}
+
+    	return $total;
     }
 }

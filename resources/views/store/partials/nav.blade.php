@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand main-title" href="#">Tienda</a>
+  <a class="navbar-brand main-title" href="{{ route('home')}}">Tienda</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,7 +9,7 @@
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="{{ route('cart-show')}}"><i class="fa fa-shopping-cart"></i></a></li>
       <li class="nav-item"><a class="nav-link" href="#">Conócenos</a></li>
       <li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
       <li class="nav-item dropdown">
