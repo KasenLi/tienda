@@ -12,14 +12,7 @@
       <li class="nav-item"><a class="nav-link" href="{{ route('cart-show')}}"><i class="fa fa-shopping-cart"></i></a></li>
       <li class="nav-item"><a class="nav-link" href="#">Conócenos</a></li>
       <li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user"></i><span class="caret"></span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Iniciar Sesión</a>
-        </div>
-      </li>
+      @include('store.partials.menu-user')
     </ul>
     
   </div>
