@@ -14,6 +14,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="{{ route('login')}}">Iniciar Sesión</a>
+          <a class="dropdown-item" href="{{ route('register')}}">Registrarse</a>
         </div>
       </li>
 @endif

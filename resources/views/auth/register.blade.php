@@ -15,7 +15,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-2 col-form-label ">{{ __('Name') }}</label>
 
                             <div class="col-md-4">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -26,7 +26,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <label for="last_name" class="col-md-2 col-form-label text-md-right">{{ __('Last name') }}</label>
+                            <label for="last_name" class="col-md-2 col-form-label ">{{ __('Last name') }}</label>
 
                             <div class="col-md-4">
                                 <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="username" class="col-md-2 col-form-label text-md-right">{{ __('Username') }}</label>
+                            <label for="username" class="col-md-2 col-form-label ">{{ __('Username') }}</label>
 
                             <div class="col-md-4">
                                 <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
@@ -51,7 +51,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <label for="email" class="col-md-2 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-2 col-form-label ">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-4">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-2 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-2 col-form-label ">{{ __('Password') }}</label>
 
                             <div class="col-md-4">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -76,14 +76,14 @@
                                     </span>
                                 @endif
                             </div>
-                            <label for="password-confirm" class="col-md-2 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-2 col-form-label ">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-4">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="address" class="col-md-2 col-form-label text-md-right">{{ __('Address') }}</label>
+                            <label for="address" class="col-md-2 col-form-label ">{{ __('Address') }}</label>
 
                             <div class="col-md-10">
                                 <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}"required>
