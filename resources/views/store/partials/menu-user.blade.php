@@ -4,7 +4,7 @@
           <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ Auth::logout()}}">Cerrar Sesión</a>
+          <a class="dropdown-item" href="{{ route('auth.logout')}}">Cerrar Sesión</a>
         </div>
       </li>
 @else

@@ -41,12 +41,17 @@ Route::get('cart/update/{product}/{quantity?}', [
 	'uses' => 'CartController@update'
 ]);
 
-Route::get('order-detail',[
-	'middleware' => 'auth',
-	'as' => 'order-detail',
-	'uses' => 'CartController@orderDetail'
-]);
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('order-detail',[
+		'as' => 'order-detail',
+		'uses' => 'CartController@orderDetail'
+	]);
+});
 
 Auth::routes();
 
+Route::get('auth/logout', [
+    'uses'  => 'Auth\LoginController@logout',
+    'as'    => 'auth.logout'
+]);
 //Route::get('/home', 'HomeController@index')->name('home');

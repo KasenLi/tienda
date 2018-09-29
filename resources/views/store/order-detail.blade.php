@@ -19,7 +19,7 @@
 			</div>
 			<div class="table-responsive">
 				<h3>Datos del pedido</h3>
-				<table class="table table-striped table-hover table-bordered">
+				<table class="table table-striped table-hover">
 					<thead>
 						<tr class="table-info">
 							<th>Producto</th>
@@ -29,7 +29,7 @@
 						</tr>
 					</thead>
 					@foreach($cart as $item)
-					<tbody>
+					<tbody class="table-primary">
 						<tr>
 							<td>{{ $item->name}}</td>
 							<td>{{ number_format($item->price, 2)}}</td>
