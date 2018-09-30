@@ -54,4 +54,16 @@ Route::get('auth/logout', [
     'uses'  => 'Auth\LoginController@logout',
     'as'    => 'auth.logout'
 ]);
-//Route::get('/home', 'HomeController@index')->name('home');
+
+// Paypal
+//Enviamos pedido
+Route::get('payment', array(
+	'as' => 'payment',
+	'uses' => 'PaypalController@postPayment',
+));
+
+// Paypal redirecciona a esta ruta
+Route::get('payment/status', array(
+	'as' => 'payment.status',
+	'uses' => 'PaypalController@getPaymentStatus',
+));
