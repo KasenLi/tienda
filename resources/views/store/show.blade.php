@@ -3,7 +3,7 @@
 @section('content')
 <div class="container text-center">
 	<div class="page-header">
-		<h1><i class="fa fa-shopping-cart"></i> Detalle del producto</h1>
+		<h1><i class="fa fa-shopping-cart"></i> {{trans('app.product_detail')}}</h1>
 	</div>
 	<hr>
 	<div class="row">
@@ -17,10 +17,10 @@
 				<h3>{{ $product->name}}</h3><hr>
 				<div class="product-info panel">
 					<p>{{$product->description}}</p>
-					<h3><span class="badge badge-success">Precio: ${{ number_format($product->price,2) }}</span></h3>
+					<h3><span class="badge badge-success">{{trans('app.price')}}: ${{ number_format($product->price,2) }}</span></h3>
 					<p>
 						<a class="btn btn-warning btn-block" href="{{ route('cart-add', $product->slug)}}">
-							La quiero <i class="fa fa-cart-plus"></i>
+							{{trans('app.want_it')}} <i class="fa fa-cart-plus"></i>
 						</a>
 					</p>
 				</div>
@@ -29,7 +29,7 @@
 	</div><hr>
 	<p>
 		<a class="btn btn-info" href="{{ route('home')}}">
-			<i class="fa fa-chevron-circle-left"></i> Regresar
+			<i class="fa fa-chevron-circle-left"></i> {{trans('app.return')}}
 		</a>
 	</p>
 </div>

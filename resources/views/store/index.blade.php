@@ -10,10 +10,10 @@
 				<img src="{{ asset($product->image) }}" width="200" style="height: 250px;">
 				<div class="product-info panel">
 					<p>{{ $product->extract }}</p>
-					<h3><span class="badge badge-success">Precio: ${{number_format($product->price,2)}}</span></h3>
+					<h3><span class="badge badge-success">{{trans('app.price')}}: ${{number_format($product->price,2)}}</span></h3>
 					<p>
-						<a class="btn btn-warning" href="{{ route('cart-add', $product->slug)}}"><i class="fa fa-cart-plus"></i> La quiero</a>
-						<a class="btn btn-info" href="{{ route('product-detail', $product->slug)}}"><i class="fa fa-chevron-circle-right"></i> Leer mas</a>
+						<a class="btn btn-warning" href="{{ route('cart-add', $product->slug)}}"><i class="fa fa-cart-plus"></i> {{trans('app.want_it')}}</a>
+						<a class="btn btn-info" href="{{ route('product-detail', $product->slug)}}"><i class="fa fa-chevron-circle-right"></i> {{trans('app.read_more')}}</a>
 					</p>
 				</div>
 			</div>

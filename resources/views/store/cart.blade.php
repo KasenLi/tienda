@@ -3,25 +3,25 @@
 @section('content')
 	<div class="container text-center">
 		<div class="page-header">
-			<h1><i class="fa fa-shopping-cart"></i> Carrito de compra</h1><hr>
+			<h1><i class="fa fa-shopping-cart"></i> {{trans('app.shopping_cart')}}</h1><hr>
 		</div>
 		<div class="table-cart">
 			@if(count($cart))
 			<p>
 				<a href="{{ route('cart-trash')}}" class="btn btn-danger">
-					Vaciar carrito <i class="fa fa-trash"></i>
+					{{trans('app.empty_cart')}} <i class="fa fa-trash"></i>
 				</a>
 			</p>
 			<div class="table-responsive">
 				<table class="table table-striped table-hover table-bordered">
 					<thead>
 						<tr>
-							<th>Imagen</th>
-							<th>Producto</th>
-							<th>Precio</th>
-							<th>Cantidad</th>
-							<th>Subtotal</th>
-							<th>Quitar</th>
+							<th>{{trans('app.image')}}</th>
+							<th>{{trans('app.product')}}</th>
+							<th>{{trans('app.price')}}</th>
+							<th>{{trans('app.quantity')}}</th>
+							<th>{{trans('app.subtotal')}}</th>
+							<th>{{trans('app.remove')}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,17 +60,17 @@
 			@else
 				<h3>
 					<span class="badge badge-warning">
-						No hay productos en el carrito :( 
+						{{trans('app.no_product_on_cart')}} :( 
 					</span>
 				</h3>
 			@endif
 			<hr>
 			<p>
 				<a href="{{ route('home')}}" class="btn btn-info">
-					<i class="fa fa-chevron-circle-left"></i> Seguir comprando
+					<i class="fa fa-chevron-circle-left"></i> {{trans('app.add_more')}}
 				</a>
 				<a href="{{ route('order-detail')}}" class="btn btn-info">
-					Continuar <i class="fa fa-chevron-circle-right"></i> 
+					{{trans('app.to_continue')}} <i class="fa fa-chevron-circle-right"></i> 
 				</a>
 			</p>
 		</div>

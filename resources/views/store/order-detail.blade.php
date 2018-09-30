@@ -3,28 +3,28 @@
 @section('content')
 	<div class="container text-center">
 		<div class="page-header">
-			<h1><i class="fa fa-shopping-cart"></i> Detalle del pedido</h1>
+			<h1><i class="fa fa-shopping-cart"></i> {{trans('app.order_detail')}}</h1>
 		</div><hr>
 
 		<div class="page">
 			<div class="table-responsive">
-				<h3>Datos del usuario</h3>
+				<h3>{{trans('app.user_detail')}}</h3>
 				<table class="table table-striped table-hover table-bordered">
-					<tr><td class="table-warning">Nombre:</td><td>{{ Auth::user()->name . " " . Auth::user()->last_name }}</td></tr>
-					<tr><td class="table-warning">Usuario:</td><td>{{ Auth::user()->username }}</td></tr>
-					<tr><td class="table-warning">Correo:</td><td>{{ Auth::user()->email }}</td></tr>
-					<tr><td class="table-warning">Dirección:</td><td>{{ Auth::user()->address }}</td></tr>
+					<tr><td class="table-warning">{{trans('app.name')}}:</td><td>{{ Auth::user()->name . " " . Auth::user()->last_name }}</td></tr>
+					<tr><td class="table-warning">{{trans('app.username')}}:</td><td>{{ Auth::user()->username }}</td></tr>
+					<tr><td class="table-warning">{{trans('app.email')}}:</td><td>{{ Auth::user()->email }}</td></tr>
+					<tr><td class="table-warning">{{trans('app.address')}}:</td><td>{{ Auth::user()->address }}</td></tr>
 
 				</table>
 			</div>
 			<div class="table-responsive">
-				<h3>Datos del pedido</h3>
+				<h3>{{trans('app.order_info')}}</h3>
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr class="table-info">
-							<th>Producto</th>
-							<th>Precio</th>
-							<th>Cantidad</th>
+							<th>{{trans('app.product')}}</th>
+							<th>{{trans('app.price')}}</th>
+							<th>{{trans('app.quantity')}}</th>
 							<th>Subtotal</th>
 						</tr>
 					</thead>
@@ -46,11 +46,11 @@
 				</h3><hr>
 				<p>
 					<a href="{{ route('cart-show')}}" class="btn btn-primary">
-						<i class="fa fa-chevron-circle-left"></i> Regresar
+						<i class="fa fa-chevron-circle-left"></i> {{trans('app.return')}}
 					</a>
 
-					<a href="#" class="btn btn-warning">
-						Pagar con <i class="fa fa-paypal fa-2x"></i>
+					<a href="{{ route('payment')}}" class="btn btn-warning">
+						{{trans('app.pay_with')}} <i class="fa fa-paypal fa-2x"></i>
 					</a>
 				</p>
 			</div>
