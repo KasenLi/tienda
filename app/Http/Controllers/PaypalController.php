@@ -86,7 +86,7 @@ class PaypalController extends Controller
  
 		try {
 			$payment->create($this->_api_context);
-		} catch (\PayPal\Exception\PPConnectionException $ex) {
+		} catch (\PayPal\Exception\PayPalConnectionException $ex) {
 			if (\Config::get('app.debug')) {
 				echo "Exception: " . $ex->getMessage() . PHP_EOL;
 				$err_data = json_decode($ex->getData(), true);
@@ -142,9 +142,9 @@ class PaypalController extends Controller
  
 		if ($result->getState() == 'approved') {
  
-			// $this->saveOrder();
+			$this->saveOrder();
  
-			// \Session::forget('cart');
+			\Session::forget('cart');
  
 			return \Redirect::route('home')
 				->with('message', 'Compra realizada de forma correcta');
@@ -153,34 +153,34 @@ class PaypalController extends Controller
 			->with('message', 'La compra fue cancelada');
 	}
  
-	// protected function saveOrder()
-	// {
-	// 	$subtotal = 0;
-	// 	$cart = \Session::get('cart');
-	// 	$shipping = 100;
+	protected function saveOrder()
+	{
+		$subtotal = 0;
+		$cart = \Session::get('cart');
+		$shipping = 5;
  
-	// 	foreach($cart as $producto){
-	// 		$subtotal += $producto->quantity * $producto->price;
-	// 	}
+		foreach($cart as $producto){
+			$subtotal += $producto->quantity * $producto->price;
+		}
  
-	// 	$order = Order::create([
-	// 		'subtotal' => $subtotal,
-	// 		'shipping' => $shipping,
-	// 		'user_id' => \Auth::user()->id
-	// 	]);
+		$order = Order::create([
+			'subtotal' => $subtotal,
+			'shipping' => $shipping,
+			'user_id' => \Auth::user()->id
+		]);
  
-	// 	foreach($cart as $producto){
-	// 		$this->saveOrderItem($producto, $order->id);
-	// 	}
-	// }
+		foreach($cart as $producto){
+			$this->saveOrderItem($producto, $order->id);
+		}
+	}
  
-	// protected function saveOrderItem($producto, $order_id)
-	// {
-	// 	OrderItem::create([
-	// 		'price' => $producto->price,
-	// 		'quantity' => $producto->quantity,
-	// 		'product_id' => $producto->id,
-	// 		'order_id' => $order_id
-	// 	]);
-	// }
+	protected function saveOrderItem($producto, $order_id)
+	{
+		OrderItem::create([
+			'price' => $producto->price,
+			'quantity' => $producto->quantity,
+			'product_id' => $producto->id,
+			'order_id' => $order_id
+		]);
+	}
 }

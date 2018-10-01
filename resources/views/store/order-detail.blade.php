@@ -50,7 +50,7 @@
 					</a>
 
 					<a href="{{ route('payment')}}" class="btn btn-warning">
-						{{trans('app.pay_with')}} <i class="fa fa-paypal fa-2x"></i>
+						{{trans('app.pay_with')}} <i class="fa fa-cc-paypal fa-2x"></i>
 					</a>
 				</p>
 			</div>
